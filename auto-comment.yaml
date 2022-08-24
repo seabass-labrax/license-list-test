@@ -7,8 +7,9 @@ filters:
       state: closed
       labels:
         $and:
-          - $eq: 'new license/exception: Accepted'
-          - $neq: 'finalised'
+          - $in: 'new license/exception: Accepted'
+          - $nin: 'finalised'
+          
 actions:
   - type: add_comment
     body: >
@@ -16,8 +17,12 @@ actions:
       has been added to the repository. Thank you to everyone who has
       participated!
 
+      
       The license's information will be published at https://spdx.org/licenses/
       as part of the next SPDX License List release, which will occur no longer
       than three months from now.
+
+      
+      This is an automated message.
   - type: add_label
     label: 'finalised'
