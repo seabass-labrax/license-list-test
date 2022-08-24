@@ -1,8 +1,9 @@
 name: Comment automatically on accepted license requests
 
 on:
-  schedule:
-    - cron: '* * * * *'
+  push:
+    branches:
+      - '**'
 
 jobs:
   comment:
